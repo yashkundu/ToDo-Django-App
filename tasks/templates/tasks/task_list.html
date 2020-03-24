@@ -1,0 +1,5 @@
+<h1>Tasks</h1>
+{% for task in object_list %}
+  {{ task.text }}     (<a href="{% url 'tasks:detail' pk=task.pk %}">Open</a>)<br>
+  {{task.timestamp}}<br><hr>
+{% endfor %}

@@ -1,0 +1,6 @@
+<h1>Task detail</h1><br><hr>
+<h1>{{ object.text }}</h1>
+<h3>{{ object.timestamp }}</h3>
+<br>
+<a href="{% url 'tasks:delete' pk=object.pk %}">Delete</a>
+<a href="{% url 'tasks:update' pk=object.pk %}">Update</a>
