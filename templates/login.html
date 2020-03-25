@@ -3,18 +3,15 @@
 {% load crispy_forms_tags %}
 
 {% block title %}
-Task
+LogIn
 {% endblock %}
 
 {% block content %}
-{% if created %}
-  <h2>Create a task</h2>
-{% else %}
-  <h2>Update the task</h2>
-{% endif %}
+<h1>Login Form</h1>
+
 <form action="" method="POST">
   {% csrf_token %}
   {{ form|crispy }}
-  <button type="submit" class="btn btn-success" name="button">Submit</button>
+  <button type="submit" class="btn btn-primary" name="button">LogIn</button>
 </form>
 {% endblock %}

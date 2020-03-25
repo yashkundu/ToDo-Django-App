@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
     # custom apps
     'tasks',
+    'crispy_forms',
 ]
 
 MIDDLEWARE = [
@@ -121,3 +122,18 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+
+STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static-serve', 'static_root')
+
+
+# MEDIA_URL = '/media/'
+# MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static-serve','media_root')
+
+
+LOGIN_URL = '/login/'
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

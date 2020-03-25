@@ -1,1 +1,15 @@
-<h1>Home Page</h1>
+{% extends 'base.html' %}
+{% block title %}
+Home Page
+{% endblock %}
+
+
+{% block content %}
+<div class="jumbotron">
+  <h1 class="display-4">ToDo Application</h1>
+  <p class="lead">Add you day to day tasks and accomplish them.</p>
+  <hr class="my-4">
+  <p>Add a new task to your List.</p>
+  <a class="btn btn-primary btn-lg" href="{% url 'tasks:create' %}" role="button">Create</a>
+</div>
+{% endblock %}

@@ -17,10 +17,20 @@ from django.contrib import admin
 from django.urls import path
 from django.conf.urls import include
 
-from .views import home_page
+from django.conf import settings
+from django.conf.urls.static import static
+
+from .views import home_page, signup_view, login_view, logout_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',home_page,name='home'),
-    path('tasks/', include(('tasks.urls','tasks'),namespace='tasks'))
+    path('tasks/', include(('tasks.urls','tasks'),namespace='tasks')),
+    path('signup/',signup_view, name='signup'),
+    path('login/', login_view, name='login'),
+    path('logout/', logout_view, name='logout'),
 ]
+
+
+if settings.DEBUG:
+    urlpatterns = urlpatterns + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
